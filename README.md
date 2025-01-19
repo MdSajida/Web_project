@@ -30,7 +30,6 @@ The homepage serves as a gateway to all three projects. Clicking on a project wi
 ![Weather App](WGP_ss/weather.png)
 
 ### Number Guessing Game
-- Interactive game logic with a defined range (1-100).
 
 ![Number Guessing Game](WGP_ss/guess.png)
 

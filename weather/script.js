@@ -1,4 +1,4 @@
-const weatherApiKey = "e3825d274d213eafab5155df496c5ce8"; // Replace with your OpenWeatherMap API key
+const weatherApiKey = "addYourWeatherApi"; // Replace with your OpenWeatherMap API key
 
 // Check if there's saved history in localStorage, if so, load it
 const loadHistoryFromLocalStorage = () => {

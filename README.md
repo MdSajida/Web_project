@@ -50,13 +50,24 @@ The homepage serves as a gateway to all three projects. Clicking on a project wi
 ## How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/MdSajida/Web_project.git
    ```
 2. Navigate to the project folder:
    ```bash
-   cd your-repo-name
+   cd Web_project
    ```
-3. Open `index.html` in your browser to explore the integrated projects.
+3. Open `project.html` in your browser to explore the integrated projects.
+
+4. Make sure to replace placeholders with your API keys:
+- In  weather folder ,In `index.html`:
+  ```html
+  <script async
+      src="https://maps.googleapis.com/maps/api/js?key=YourGoogleMapApiKey&loading=async">
+  </script>
+  ```
+- In  weather folder,In `script.js`:
+  ```javascript
+  const weatherApiKey = "YourWeatherApiKey";
 
 ---
 

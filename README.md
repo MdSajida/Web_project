@@ -20,23 +20,23 @@ This repository contains three integrated projects built using HTML, CSS, and Ja
 ## Homepage
 The homepage serves as a gateway to all three projects. Clicking on a project will redirect the user to its respective page.
 
-![Homepage](WGP/home.png)
+![Homepage](WGP_ss/home.png)
 
  ---
 
 
 ## Features
 ### Weather App
-![Weather App](WGP/weather.png)
+![Weather App](WGP_ss/weather.png)
 
 ### Number Guessing Game
 - Interactive game logic with a defined range (1-100).
 
-![Number Guessing Game](WGP/guess.png)
+![Number Guessing Game](WGP_ss/guess.png)
 
 ### Password Generator
 
-![Password Generator](WGP/pwrd.png)
+![Password Generator](WGP_ss/pwrd.png)
 
 ---
 

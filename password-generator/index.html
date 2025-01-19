@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password-Generator</title>
+    <style>
+        /*Flexbox aligns items based on the size of the parent container (in this case, the body)
+        If the body doesn’t take up the full height of the viewport (e.g., just 200px tall instead of 100% of the viewport), using align-items: center will not behave as expected for vertical centering because there is not enough vertical space for centering to occur.*/
+        root{
+            --primary:rgb(41, 117, 210);
+            --fontt:
+
+        }
+        body{
+            color: rgb(243, 247, 250);
+            margin:0px;
+            display: flex;
+            height: 100vh;
+            justify-content:center;
+            align-items: center; 
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background: url('https://cdn.pixabay.com/photo/2019/12/17/05/53/security-4700815_1280.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .main1{
+           font-size:18px ;
+           font-weight: bolder;
+           display: flex;
+           gap:10px;
+           align-items:center;
+          
+        }
+        #pass{
+            font-size:18px;
+        }
+        button{
+            font-size:18px;
+            border-radius:2px ;
+            padding: 3px;
+            border-style: none;
+            background-color: rgb(228, 228, 238);
+           
+            
+            
+        }
+        button:hover{
+            background:rgba(221, 218, 218, 0.7);
+          
+            scale:1.05;
+        }
+        .container{
+            background-color:rgb(0 0 0 / 70%);
+            height: 300px;
+            width: 400px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap:30px;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 10px 10px 10px rgba(36, 24, 24, 0.42);      
+        }
+
+        label:hover{
+              
+              color: dodgerblue;
+        
+        }
+        #textdisplay{
+            font-weight: bolder;
+            color: rgb(243, 247, 250);
+            font-size: 18px;
+        }
+      
+       
+    </style>
+
+</head>
+<body>
+    <div class="container" id="con"> 
+        <div class="main1">
+            <input type="text" id="pass" readonly >
+            <button id="ttcopy">Copy</button>
+        </div>
+        <div class="main1">
+            <input type="range" id="ran" value="8" max="20">
+            Length &nbsp :
+            <span id="len"></span>
+           
+        </div>
+        <div class="main1">
+        <input type="checkbox" id="numse">
+        <label for="numse">
+            Number
+        </label>
+        <input type="checkbox" id="symbolse">
+        <label for="symbolse">
+           Symbols
+        </label>
+        </div>
+       <div id="textdisplay" >
+        </div>
+
+
+    </div>
+    
+</body>
+<script >
+    const ran=document.getElementById('ran');  
+    const len=document.getElementById('len');
+    const pass=document.getElementById('pass');
+    const numse=document.getElementById('numse');
+    const symbolse=document.getElementById('symbolse');
+    const ttcopy=document.getElementById('ttcopy');
+    const textdisplay=document.getElementById('textdisplay');
+
+    pass.value="swerdftg";
+    len.innerHTML=ran.value;
+
+    let numcheck=false;
+    let symbolcheck=false;
+    let ranlen=8;
+
+   // console.log(typeof(ran.value));//string format
+   
+    const alphas="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+    const digits="1234567890";
+    const symbols="!@#$%^&*?<>.,";
+    //const arrr=[alphas,digits,symbols];
+
+
+    numse.addEventListener('input',function(){
+        //numse.value : is always on
+        if(numse.checked) numcheck=true;
+        else numcheck=false;
+        console.log("num "+ numse.value);
+        genpassword();
+        
+         
+    });
+   
+    symbolse.addEventListener('input',function(){
+        
+        if(symbolse.checked) symbolcheck=true;
+        else symbolcheck=false;
+        genpassword();
+        
+    });
+    ran.addEventListener("input",function(){
+
+       
+        ranlen=ran.valueAsNumber;//as ran.value is a string
+        len.innerHTML=ranlen;
+        genpassword();
+        console.log(ranlen);
+        
+    });
+
+    function genpassword(){
+        let res='';
+        let genran=0;
+        let alphaslen=alphas.length
+        for(let nu=1;nu<=ranlen; nu++){
+            genran=Math.random()*10;
+          //  console.log(genran);
+          if(genran>=6){
+            if(numcheck && nu<=ranlen){
+            let digitsi= (Math.random()*digits.length);
+            res=res + digits.charAt(digitsi);
+            nu++;   
+                 
+            }
+          }
+         
+            if(symbolcheck && nu<=ranlen){
+            let symbolsi= (Math.random()*symbols.length);
+            res=res + symbols.charAt(symbolsi);
+            nu++;          
+            }
+        
+     
+            if( nu<=ranlen){
+            let alphai= (Math.random()*alphaslen);
+            res=res + alphas.charAt(alphai);  }     
+        
+    }
+        console.log(res)
+        pass.value=res;
+       
+
+        
+    }
+   
+    ttcopy.addEventListener('click',function(){
+        // Copy the text inside the input field to the clipboard
+        navigator.clipboard.writeText(pass.value)
+        .then(() => {
+            textdisplay.innerHTML="Text-Copied to Clipboard!! "+pass.value;
+            
+             setTimeout(function() {
+              textdisplay.textContent = '';
+             
+             }, 2000);
+        })
+        .catch(err => {
+            console.error("Failed to copy text: ", err);
+        });
+                
+        });
+        
+</script>
+</html>

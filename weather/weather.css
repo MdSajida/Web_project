@@ -1,0 +1,115 @@
+#wbody {
+    background: url('https://cdn.pixabay.com/photo/2023/12/22/12/08/beach-8463642_1280.jpg') no-repeat center center fixed; /* Replace with the actual path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+   /* // background: linear-gradient(135deg, #74b9ff, #0984e3); */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #history-container {
+    display: flex;
+    justify-content: center; 
+  }
+  
+  #history-list{
+    width: 50%; 
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+  }
+  
+  .list-group-item {
+    background: rgb(0 0 0 / 15%);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+
+  
+  .history-map {
+    border-radius: 10px;
+  }
+  
+  .weather-details small {
+    font-size: 0.8rem;
+    color: #ddd;
+  }
+
+.history-map {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .item-header h5 {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  
+ 
+.weather-details p {
+    font-size: 1.1rem;
+  }
+  
+ 
+  .weather-details p {
+    margin-bottom: 1.5rem; 
+  }
+  
+  .weather-detail-value {
+    font-weight: bold;
+    padding-right: 5px; 
+    margin-right: 5px; 
+  }
+  
+  @media (max-width: 767px) {
+    .item-header h5 {
+      font-size: 1.2rem;
+    }
+  
+    .removehis {
+      margin-left: 10px;
+    }
+  
+    .weather-details p {
+      font-size: 1.1rem;
+    }
+  
+    /* Map styling for small screens */
+    .history-map {
+      height: 150px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .item-header h5 {
+      font-size: 1.5rem;
+    }
+  
+    .weather-details p {
+      font-size: 1rem;
+    }
+  
+    /* Map height adjustment for larger screens */
+    .history-map {
+      height: 200px;
+    }
+  }
+  
+  
